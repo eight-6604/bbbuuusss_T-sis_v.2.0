@@ -21,11 +21,11 @@ class UserMiddleware
                 return $next($request);
             } else {
                 Auth::logout();
-                return redirect('/');
+                return redirect(url('/'));
             }
         }else{
             Auth::logout();
-            return redirect('/');
+            return redirect(url('/'));
         }
     }
 }

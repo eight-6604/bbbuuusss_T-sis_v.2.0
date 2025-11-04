@@ -11,10 +11,10 @@ class DashboardController extends Controller
         $user = Auth::user();
 
         if($user->role === 'admin'){
-            echo "Admin Dashboard"; die();
+            return view('dashboard.admin_list');
 
         }else if($user->role === 'customer'){
-            echo "User Dashboard"; die();
+            return view('dashboard.user_list');
         }
     }
 }
