@@ -27,6 +27,9 @@ class AuthController extends Controller
         }else{
             return redirect()->back()->with('error','Invalid Credentials.');
         }
+
+        // $pass = Hash::make('123456789');
+        // dd($pass);
     }
 
     public function logout(Request $request){
