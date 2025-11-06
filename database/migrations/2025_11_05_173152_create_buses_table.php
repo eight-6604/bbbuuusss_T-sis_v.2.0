@@ -15,7 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('bus_name');
             $table->string('bus_number')->unique();
+            $table->string('bus_type_id')->constrained('bus_types')->onDelete('cascade');
             $table->integer('total_seats');
+            $table->string('bus_img')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });

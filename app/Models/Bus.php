@@ -12,17 +12,22 @@ class Bus extends Model
     protected $fillable = [
         'bus_number',
         'bus_name',
-        'bus_type',
+        'bus_type_id',
         'total_seats',
         'bus_img',
         'status',
     ];
 
-      
+
     // A Bus belongs to a Bus Type (e.g. Deluxe, Sleeper, AC)
-     
+
     public function type()
     {
         return $this->belongsTo(BusType::class, 'bus_type_id');
+    }
+
+    public function seatLayout()
+    {
+        return $this->belongsTo(SeatLayout::class,'seat_layout_id');
     }
 }

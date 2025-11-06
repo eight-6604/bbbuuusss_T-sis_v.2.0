@@ -24,11 +24,14 @@ class BusTypeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'type_name' => 'required|string|max:255',
             'description' => 'nullable|string',
         ]);
 
-        BusType::create($request->only(['name', 'description']));
+        BusType::create([
+        'type_name' => $request->type_name, // 👈 use type_name
+        'description' => $request->description,
+    ]);
 
         return redirect()->route('admin.bus-types.index')
                          ->with('success', 'Bus Type added successfully.');
@@ -44,11 +47,11 @@ class BusTypeController extends Controller
     public function update(Request $request, BusType $busType)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'type_name' => 'required|string|max:255',
             'description' => 'nullable|string',
         ]);
 
-        $busType->update($request->only(['name', 'description']));
+        $busType->update($request->only(['type_name', 'description']));
 
         return redirect()->route('admin.bus-types.index')
                          ->with('success', 'Bus Type updated successfully.');

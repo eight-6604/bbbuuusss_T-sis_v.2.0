@@ -72,6 +72,13 @@
                 </a>
             </li>
 
+            <li>
+                <a href="{{ route('admin.seat-layouts.index') }}">
+                    <ion-icon name="grid-outline"></ion-icon>
+                    <span>Seat Layout</span>
+                </a>
+            </li>
+
             {{-- user_menu --}}
         @elseif(Auth::user()->role === 'customer')
             <li>

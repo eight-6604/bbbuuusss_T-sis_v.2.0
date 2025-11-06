@@ -22,7 +22,7 @@
         @forelse($busTypes as $type)
         <tr>
             <td class="border px-4 py-2">{{ $type->id }}</td>
-            <td class="border px-4 py-2">{{ $type->name }}</td>
+            <td class="border px-4 py-2">{{ $type->type_name }}</td>
             <td class="border px-4 py-2">{{ $type->description }}</td>
             <td class="border px-4 py-2 space-x-2">
                 <a href="{{ route('admin.bus-types.edit', $type) }}" 

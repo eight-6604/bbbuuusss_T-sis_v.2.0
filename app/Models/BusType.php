@@ -10,7 +10,7 @@ class BusType extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name',
+        'type_name',
         'description'
     ];
 
