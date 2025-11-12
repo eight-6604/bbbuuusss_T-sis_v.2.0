@@ -1,0 +1,30 @@
+%btn {
+  position: relative;
+  padding: 5px 10px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
+// Primary Button
+.btn-primary {
+  @include button($btn-primary-bg, $btn-primary-color);
+}
+
+// Info Button
+.btn-info {
+  @include button($btn-info-bg, $white);
+}
+
+// Danger Button
+.btn-danger {
+  @include button($btn-danger-bg, $white);
+}
+
+// Hover Effect
+.btn:hover {
+  transform: scale($btn-hover-scale);
+}

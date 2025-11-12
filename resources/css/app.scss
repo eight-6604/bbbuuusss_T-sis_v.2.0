@@ -1,0 +1,33 @@
+// abstracts - variables, mixins, functions
+@import 'abstracts/variable';
+@import 'abstracts/mixins';
+@import 'abstracts/function';
+
+// base styles - reset, typography, utilities
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/utilities';
+
+// components - buttons, alerts, cards, forms
+@import 'components/alerts';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/tables';
+
+// layout - header, footer, sidebar, navbar
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/sidebar';
+@import 'layout/navbar';
+
+// pages - admin bus, user dashboard, auth, etc.
+// For example, if you want to include bus admin pages styles globally
+@import 'pages/admin/bus_management/bus/bus';
+@import 'pages/admin/dashboard';
+@import 'pages/admin/bus_management/seat_layout/seat-layout';
+@import 'pages/user/dashboard';
+@import 'pages/auth';
+
+// themes (if any)
+@import 'themes/default'; // replace with actual theme files if you have them

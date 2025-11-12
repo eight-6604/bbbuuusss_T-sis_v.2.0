@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\Bus;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\Bus;
 use App\Models\BusType;
@@ -13,7 +15,7 @@ class BusController extends Controller
     public function index()
     {
         $buses = Bus::with(['type', 'seatLayout'])->orderBy('id', 'desc')->get();
-        return view('admin.bus.index', compact('buses'));
+        return view('admin.bus_management.bus.index', compact('buses'));
     }
 
     public function create()
@@ -21,7 +23,7 @@ class BusController extends Controller
         // Load all bus types together with their seat layout
         $busTypes = \App\Models\BusType::with('seatLayout')->get();
 
-        return view('admin.bus.create', compact('busTypes'));
+        return view('admin.bus_management.bus.create', compact('busTypes'));
     }
 
     public function store(Request $request)
@@ -60,7 +62,7 @@ class BusController extends Controller
         $bus = Bus::findOrFail($id);
         $busTypes = BusType::where('status', 'active')->get();
         $seatLayouts = SeatLayout::where('status', 'active')->get();
-        return view('admin.bus.edit', compact('bus', 'busTypes', 'seatLayouts'));
+        return view('admin.bus_management.bus.edit', compact('bus', 'busTypes', 'seatLayouts'));
     }
 
     public function update(Request $request, $id)
@@ -97,6 +99,12 @@ class BusController extends Controller
         ]);
 
         return redirect()->route('admin.buses.index')->with('success', 'Bus updated successfully!');
+    }
+
+    public function show($id)
+    {
+        $bus = Bus::with(['type', 'seatLayout'])->findOrFail($id);
+        return view('admin.bus_management.bus.show', compact('bus'));
     }
 
     public function destroy($id)

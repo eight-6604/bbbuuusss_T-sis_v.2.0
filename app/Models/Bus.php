@@ -33,4 +33,9 @@ class Bus extends Model
     {
         return $this->belongsTo(SeatLayout::class, 'seat_layout_id');
     }
+
+    public function bookings()
+    {
+        return $this->hasMany(Booking::class);
+    }
 }

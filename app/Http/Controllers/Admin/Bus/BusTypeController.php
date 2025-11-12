@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\Bus;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\BusType;
 use App\Models\SeatLayout;
@@ -13,7 +15,7 @@ class BusTypeController extends Controller
         $busTypes = \App\Models\BusType::with('seatLayout')->latest()->paginate(10);
         $seatLayouts = \App\Models\SeatLayout::all();
 
-        return view('admin.bus-types.index', compact('busTypes', 'seatLayouts'));
+        return view('admin.bus_management.bus-types.index', compact('busTypes', 'seatLayouts'));
     }
 
 
@@ -23,7 +25,7 @@ class BusTypeController extends Controller
     $seatLayouts = \App\Models\SeatLayout::where('status', 'active')->get();
     $busTypes = \App\Models\BusType::all(); // 👈 Add this line
 
-    return view('admin.bus-types.create', compact('seatLayouts', 'busTypes'));
+    return view('admin.bus_management.bus-types.create', compact('seatLayouts', 'busTypes'));
 }
 
     public function store(Request $request)
@@ -43,7 +45,7 @@ class BusTypeController extends Controller
     {
         $busType = BusType::findOrFail($id);
         $seatLayouts = SeatLayout::where('status', 'active')->get();
-        return view('admin.bus-types.edit', compact('busType', 'seatLayouts'));
+        return view('admin.bus_management.bus-types.edit', compact('busType', 'seatLayouts'));
     }
 
     public function update(Request $request, $id)

@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\Bus;
+
+use App\Http\Controllers\Controller;
 
 use App\Models\SeatLayout;
 use Illuminate\Http\Request;
@@ -10,12 +12,12 @@ class SeatLayoutController extends Controller
     public function index()
     {
         $seatLayouts = SeatLayout::latest()->paginate(10);
-        return view('admin.seat_layout.index', compact('seatLayouts'));
+        return view('admin.bus_management.seat_layout.index', compact('seatLayouts'));
     }
 
     public function create()
     {
-        return view('admin.seat_layout.create');
+        return view('admin.bus_management.seat_layout.create');
     }
 
     public function store(Request $request)
@@ -33,14 +35,14 @@ class SeatLayoutController extends Controller
 
         SeatLayout::create($validated);
 
-        return redirect()->route('admin.seat-layouts.index')
+        return redirect()->route('admin.bus_management.seat-layouts.index')
             ->with('success', 'Seat layout created successfully.');
     }
 
     public function edit($id)
     {
         $seatLayout = SeatLayout::findOrFail($id);
-        return view('admin.seat_layout.edit', compact('seatLayout'));
+        return view('admin.bus_management.seat_layout.edit', compact('seatLayout'));
     }
 
     public function update(Request $request, $id)
