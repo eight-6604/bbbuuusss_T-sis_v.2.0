@@ -9,19 +9,20 @@
   color: cyan;
 }
 
-.navigation  ul {
+.navigation ul {
   position: relative;
   top: 0;
   left: 0;
   width: 100%;
-//   background-color: red;
+  //   background-color: red;
 
 }
+
 .navigation ul li {
   position: relative;
   width: 100%;
   list-style: none;
-//   background-color: rgb(97, 30, 13);
+  //   background-color: rgb(97, 30, 13);
 }
 
 .navigation li.title {
@@ -36,7 +37,7 @@
   display: flex;
   text-decoration: none;
   color: var(--white);
-//   background-color: green;
+  //   background-color: green;
 }
 
 .navigation ul li a .icon {
@@ -63,21 +64,22 @@
 }
 
 .navigation .has-submenu .submenu {
-    background-color: red;
+  background-color: red;
 }
 
 .submenu {
-    padding-left: 20px;
-    list-style: none;
+  padding-left: 20px;
+  list-style: none;
+  display: none;
 }
 
 .submenu li a {
-    // display: block;
-    padding: 8px 10px;
-    text-decoration: none;
-    color: #333;
+  // display: block;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: #333;
 }
 
 .submenu li a:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
