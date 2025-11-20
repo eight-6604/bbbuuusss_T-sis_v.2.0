@@ -86,7 +86,6 @@ Route::prefix('bookings')->group(function () {
 |--------------------------------------------------------------------------
 */
 Route::prefix('trip-management')->group(function () {
-
   Route::resource('routes', RouteController::class)->names([
     'index'   => 'routes.index',
     'create'  => 'routes.create',
@@ -117,6 +116,7 @@ Route::prefix('trip-management')->group(function () {
     'destroy' => 'fares.destroy',
   ]);
 });
+
 
 /*
 |--------------------------------------------------------------------------

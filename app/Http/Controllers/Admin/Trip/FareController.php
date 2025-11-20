@@ -3,70 +3,62 @@
 namespace App\Http\Controllers\Admin\Trip;
 
 use App\Http\Controllers\Controller;
-use App\Models\Fare;
-use App\Models\Route;
 use Illuminate\Http\Request;
+use App\Models\Trip;
 
 class FareController extends Controller
 {
-  // Show all fares
   public function index()
   {
-    $fares = Fare::all();
-    return view('admin.triproute_management.fares.index', compact('fares'));
+    $trips = Trip::all();
+    return view('admin.triproute_management.fares.index', compact('trips'));
   }
 
-  // Show form to create fare
   public function create()
   {
-    $routes = Route::all();
-    return view('admin.triproute_management.fares.create', compact('routes'));
+    $trips = Trip::all();
+    return view('admin.triproute_management.fares.create', compact('trips'));
   }
 
-  // Store fare in database
   public function store(Request $request)
   {
-    $validated = $request->validate([
-      'route_id' => 'required|exists:routes,id',
-      'price'    => 'required|numeric|min:0',
+    $request->validate([
+      'trip_id' => 'required|exists:trips,id',
+      'fare'    => 'required|numeric|min:0',
     ]);
 
-    Fare::create($validated);
+    $trip = Trip::findOrFail($request->trip_id);
+    $trip->fare = $request->fare;
+    $trip->save();
 
-    return redirect()->route('admin.fares.index')
-      ->with('success', 'Fare created successfully.');
+    return redirect()->route('fares.index')->with('success', 'Fare created successfully.');
   }
 
-  // Show edit form
   public function edit($id)
   {
-    $fare = Fare::findOrFail($id);
-    $routes = Route::all();
-    return view('admin.triproute_management.fares.edit', compact('fare', 'routes'));
+    $trip = Trip::findOrFail($id);
+    return view('admin.triproute_management.fares.edit', compact('trip'));
   }
 
-  // Update fare
   public function update(Request $request, $id)
   {
-    $validated = $request->validate([
-      'route_id' => 'required|exists:routes,id',
-      'price'    => 'required|numeric|min:0',
+    $request->validate([
+      'fare' => 'required|numeric|min:0',
     ]);
 
-    $fare = Fare::findOrFail($id);
-    $fare->update($validated);
+    $trip = Trip::findOrFail($id);
+    $trip->fare = $request->fare;
+    $trip->save();
 
-    return redirect()->route('admin.fares.index')
-      ->with('success', 'Fare updated successfully.');
+    return redirect()->route('fares.index')->with('success', 'Fare updated successfully.');
   }
 
-  // Delete fare
   public function destroy($id)
   {
-    $fare = Fare::findOrFail($id);
-    $fare->delete();
+    $trip = Trip::findOrFail($id);
+    $trip->fare = null;
+    $trip->save();
 
-    return redirect()->route('admin.fares.index')
-      ->with('success', 'Fare deleted successfully.');
+    return redirect()->route('fares.index')->with('success', 'Fare removed successfully.');
   }
 }

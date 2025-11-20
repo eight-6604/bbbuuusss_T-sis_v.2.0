@@ -1,23 +1,25 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
-  <div class="container">
-    <h2>Add Fare</h2>
+  <h1>Add Fare</h1>
 
-    <form action="{{ route('admin.fares.store') }}" method="POST">
-      @csrf
+  <form action="{{ route('fares.store') }}" method="POST">
+    @csrf
+    <div class="form-group">
+      <label>Trip</label>
+      <select name="trip_id" class="form-control" required>
+        <option value="">Select Trip</option>
+        @foreach($trips as $trip)
+          <option value="{{ $trip->id }}">{{ $trip->trip_code }} - {{ $trip->route->name ?? '-' }}</option>
+        @endforeach
+      </select>
+    </div>
 
-      <div class="mb-3">
-        <label>Route ID</label>
-        <input type="number" name="route_id" class="form-control">
-      </div>
+    <div class="form-group">
+      <label>Fare</label>
+      <input type="number" step="0.01" name="fare" class="form-control" required>
+    </div>
 
-      <div class="mb-3">
-        <label>Fare Price</label>
-        <input type="number" name="price" class="form-control">
-      </div>
-
-      <button class="btn btn-primary">Create Fare</button>
-    </form>
-  </div>
+    <button type="submit" class="btn btn-primary mt-2">Save</button>
+  </form>
 @endsection

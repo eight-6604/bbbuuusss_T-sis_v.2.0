@@ -3,21 +3,36 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
+  /**
+   * Seed the application's database.
+   */
   public function run(): void
   {
-    // 1. Seat layouts must be seeded first
-    $this->call(SeatLayoutSeeder::class);
+    DB::transaction(function () {
+      // 1️⃣ Seed Seat Layouts first (needed by bus types)
+      $this->call(SeatLayoutSeeder::class);
 
-    // 2. Bus types (depends on seat layouts)
-    $this->call(BusTypeSeeder::class);
+      // 2️⃣ Seed Bus Types (depends on seat layouts)
+      $this->call(BusTypeSeeder::class);
 
-    // 3. Buses (depends on bus types and seat layouts)
-    $this->call(BusSeeder::class);
+      // 3️⃣ Seed Buses (depends on bus types and seat layouts)
+      $this->call(BusSeeder::class);
 
-    // Optional: Users, Routes, etc.
-    $this->call(UserSeeder::class);
+      // 4️⃣ Seed Users (admins, customers, etc.)
+      $this->call(UserSeeder::class);
+
+      // 5️⃣ Seed Routes (needed before trips)
+      $this->call(RouteSeeder::class);
+
+      // 6️⃣ Seed Trips (depends on buses and routes)
+      $this->call(TripSeeder::class);
+
+      // 7️⃣ Seed Bookings (depends on trips and users)
+      $this->call(BookingSeeder::class);
+    });
   }
 }

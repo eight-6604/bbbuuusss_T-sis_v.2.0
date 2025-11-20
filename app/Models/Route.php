@@ -9,9 +9,18 @@ class Route extends Model
 {
   use HasFactory;
 
-  // Optional: if you want to allow mass assignment
-  protected $fillable = ['name']; // add your columns here
+  protected $fillable = [
+    'route_name',
+    'origin',
+    'destination',
+    'distance_km',
+    'status',
+    'description',
+  ];
 
-  // Optional: explicitly set table name to avoid reserved word conflicts
-  protected $table = 'routes';
+  // A route can have many trips
+  public function trips()
+  {
+    return $this->hasMany(Trip::class);
+  }
 }

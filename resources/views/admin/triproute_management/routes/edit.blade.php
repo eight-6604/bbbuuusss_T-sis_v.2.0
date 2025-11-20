@@ -1,28 +1,27 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
 @section('content')
-  <div class="container">
-    <h2>Edit Route</h2>
+  <h1>{{ isset($route) ? 'Edit Route' : 'Add Route' }}</h1>
 
-    <form action="{{ route('admin.routes.update', $route->id) }}" method="POST">
-      @csrf @method('PUT')
+  <form action="{{ isset($route) ? route('admin.routes.update', $route->id) : route('routes.store') }}" method="POST">
+    @csrf
+    @if(isset($route))
+      @method('PUT')
+    @endif
 
-      <div class="mb-3">
-        <label class="form-label">Route Name</label>
-        <input type="text" name="name" class="form-control" value="{{ $route->name }}">
-      </div>
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" class="form-control" value="{{ $route->name ?? '' }}" required>
+    </div>
+    <div class="form-group">
+      <label>Origin</label>
+      <input type="text" name="origin" class="form-control" value="{{ $route->origin ?? '' }}" required>
+    </div>
+    <div class="form-group">
+      <label>Destination</label>
+      <input type="text" name="destination" class="form-control" value="{{ $route->destination ?? '' }}" required>
+    </div>
 
-      <div class="mb-3">
-        <label class="form-label">Start Location</label>
-        <input type="text" name="start_location" class="form-control" value="{{ $route->start_location }}">
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">End Location</label>
-        <input type="text" name="end_location" class="form-control" value="{{ $route->end_location }}">
-      </div>
-
-      <button class="btn btn-primary">Update</button>
-    </form>
-  </div>
+    <button type="submit" class="btn btn-primary mt-2">{{ isset($route) ? 'Update' : 'Save' }}</button>
+  </form>
 @endsection
