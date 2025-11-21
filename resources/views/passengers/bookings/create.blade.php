@@ -1,34 +1,50 @@
-@extends('layouts.app')
+@extends('layouts.user')
 
 @section('content')
-  <h1>Create New Booking</h1>
+  <div class="max-w-3xl mx-auto py-10">
 
-  <form action="{{ route('user.bookings.store') }}" method="POST">
-    @csrf
+    <h2 class="text-3xl font-bold mb-6 text-gray-800">Create a Booking</h2>
 
-    <label>Bus:</label>
-    <select name="bus_id">
-      @foreach($buses as $bus)
-        <option value="{{ $bus->id }}">{{ $bus->name }}</option>
-      @endforeach
-    </select>
-    <br><br>
+    <div class="bg-white shadow rounded-lg p-6">
 
-    <label>Route:</label>
-    <select name="route_id">
-      @foreach($routes as $route)
-        <option value="{{ $route->id }}">{{ $route->name ?? 'Route '.$route->id }}</option>
-      @endforeach
-    </select>
-    <br><br>
+      <form action="{{ route('user.bookings.storeRouteDate') }}" method="POST">
+        @csrf
 
-    <label>Seat Number:</label>
-    <input type="number" name="seat_number" min="1" required>
-    <br><br>
+        {{-- From Location --}}
+        <div class="mb-4">
+          <label class="block font-medium mb-2">From</label>
+          <select name="from" required class="w-full border rounded px-3 py-2">
+            <option value="">Select departure location</option>
+            @foreach($routes as $route)
+              <option value="{{ $route->from }}">{{ $route->from }}</option>
+            @endforeach
+          </select>
+        </div>
 
-    <button type="submit">Book Now</button>
-  </form>
+        {{-- To Location --}}
+        <div class="mb-4">
+          <label class="block font-medium mb-2">To</label>
+          <select name="to" required class="w-full border rounded px-3 py-2">
+            <option value="">Select arrival location</option>
+            @foreach($routes as $route)
+              <option value="{{ $route->to }}">{{ $route->to }}</option>
+            @endforeach
+          </select>
+        </div>
 
+        {{-- Travel Date --}}
+        <div class="mb-4">
+          <label class="block font-medium mb-2">Travel Date</label>
+          <input type="date" name="travel_date" required class="w-full border rounded px-3 py-2">
+        </div>
 
-  <a href="{{ route('user.bookings.index') }}">Back to bookings</a>
+        <button type="submit" class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold">
+          Search Trips
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
 @endsection

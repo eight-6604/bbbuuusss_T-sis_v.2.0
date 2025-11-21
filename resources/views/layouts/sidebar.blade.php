@@ -155,142 +155,142 @@
       </li>
 
       <!-- Fleet Maintenance -->
-      <li class="nav-item has-submenu">
-        <a href="#" class="toggle-submenu">
-          <span class="icon"><ion-icon name="construct-outline"></ion-icon></span>
-          <span class="title">Fleet Maintenance</span>
-          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
-        </a>
-        <ul class="submenu">
-          <li><a href="#">
-              <ion-icon name="document-text-outline"></ion-icon>
-              Maintenance Records</a></li>
-          <li><a href="#">
-              <ion-icon name="alarm-outline"></ion-icon>
-              Service Scheduling</a></li>
-          <li><a href="#">
-              <ion-icon name="build-outline"></ion-icon>
-              Repair Logs</a></li>
-          <li><a href="#">
-              <ion-icon name="fuel-outline"></ion-icon>
-              Fuel Usage</a></li>
-        </ul>
-      </li>
+{{--      <li class="nav-item has-submenu">--}}
+{{--        <a href="#" class="toggle-submenu">--}}
+{{--          <span class="icon"><ion-icon name="construct-outline"></ion-icon></span>--}}
+{{--          <span class="title">Fleet Maintenance</span>--}}
+{{--          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>--}}
+{{--        </a>--}}
+{{--        <ul class="submenu">--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="document-text-outline"></ion-icon>--}}
+{{--              Maintenance Records</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="alarm-outline"></ion-icon>--}}
+{{--              Service Scheduling</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="build-outline"></ion-icon>--}}
+{{--              Repair Logs</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="fuel-outline"></ion-icon>--}}
+{{--              Fuel Usage</a></li>--}}
+{{--        </ul>--}}
+{{--      </li>--}}
 
       <!-- Feedback & Support -->
-      <li class="nav-item has-submenu">
-        <a href="#" class="toggle-submenu">
-          <span class="icon"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>
-          <span class="title">Feedback & Support</span>
-          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
-        </a>
-        <ul class="submenu">
-          <li><a href="#">
-              <ion-icon name="chatbubbles-outline"></ion-icon>
-              Customer Feedback</a></li>
-          <li><a href="#">
-              <ion-icon name="help-circle-outline"></ion-icon>
-              Support Tickets</a></li>
-          <li><a href="#">
-              <ion-icon name="alert-circle-outline"></ion-icon>
-              Complaints & Issues</a></li>
-        </ul>
-      </li>
+{{--      <li class="nav-item has-submenu">--}}
+{{--        <a href="#" class="toggle-submenu">--}}
+{{--          <span class="icon"><ion-icon name="chatbubble-ellipses-outline"></ion-icon></span>--}}
+{{--          <span class="title">Feedback & Support</span>--}}
+{{--          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>--}}
+{{--        </a>--}}
+{{--        <ul class="submenu">--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="chatbubbles-outline"></ion-icon>--}}
+{{--              Customer Feedback</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="help-circle-outline"></ion-icon>--}}
+{{--              Support Tickets</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="alert-circle-outline"></ion-icon>--}}
+{{--              Complaints & Issues</a></li>--}}
+{{--        </ul>--}}
+{{--      </li>--}}
 
       <!-- Reports & Analytics -->
-      <li class="nav-item has-submenu">
-        <a href="#" class="toggle-submenu">
-          <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>
-          <span class="title">Reports & Analytics</span>
-          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
-        </a>
-        <ul class="submenu">
-          <li><a href="#">
-              <ion-icon name="file-tray-full-outline"></ion-icon>
-              Booking Reports</a></li>
-          <li><a href="#">
-              <ion-icon name="cash-outline"></ion-icon>
-              Revenue Reports</a></li>
-          <li><a href="#">
-              <ion-icon name="bus-outline"></ion-icon>
-              Bus Utilization</a></li>
-          <li><a href="#">
-              <ion-icon name="person-circle-outline"></ion-icon>
-              User Activity Reports</a></li>
-        </ul>
-      </li>
+{{--      <li class="nav-item has-submenu">--}}
+{{--        <a href="#" class="toggle-submenu">--}}
+{{--          <span class="icon"><ion-icon name="analytics-outline"></ion-icon></span>--}}
+{{--          <span class="title">Reports & Analytics</span>--}}
+{{--          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>--}}
+{{--        </a>--}}
+{{--        <ul class="submenu">--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="file-tray-full-outline"></ion-icon>--}}
+{{--              Booking Reports</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="cash-outline"></ion-icon>--}}
+{{--              Revenue Reports</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="bus-outline"></ion-icon>--}}
+{{--              Bus Utilization</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="person-circle-outline"></ion-icon>--}}
+{{--              User Activity Reports</a></li>--}}
+{{--        </ul>--}}
+{{--      </li>--}}
 
       <!-- System Settings -->
-      <li class="nav-item has-submenu">
-        <a href="#" class="toggle-submenu">
-          <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-          <span class="title">System Settings</span>
-          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
-        </a>
-        <ul class="submenu">
-          <li><a href="#">
-              <ion-icon name="cog-outline"></ion-icon>
-              General Settings</a></li>
-          <li><a href="#">
-              <ion-icon name="notifications-outline"></ion-icon>
-              Notification Settings</a></li>
-          <li><a href="#">
-              <ion-icon name="card-outline"></ion-icon>
-              Payment Gateway Settings</a></li>
-          <li><a href="#">
-              <ion-icon name="shield-outline"></ion-icon>
-              Roles & Permissions</a></li>
-          <li><a href="#">
-              <ion-icon name="cloud-upload-outline"></ion-icon>
-              Backup & Restore</a></li>
-        </ul>
-      </li>
+{{--      <li class="nav-item has-submenu">--}}
+{{--        <a href="#" class="toggle-submenu">--}}
+{{--          <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>--}}
+{{--          <span class="title">System Settings</span>--}}
+{{--          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>--}}
+{{--        </a>--}}
+{{--        <ul class="submenu">--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="cog-outline"></ion-icon>--}}
+{{--              General Settings</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="notifications-outline"></ion-icon>--}}
+{{--              Notification Settings</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="card-outline"></ion-icon>--}}
+{{--              Payment Gateway Settings</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="shield-outline"></ion-icon>--}}
+{{--              Roles & Permissions</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="cloud-upload-outline"></ion-icon>--}}
+{{--              Backup & Restore</a></li>--}}
+{{--        </ul>--}}
+{{--      </li>--}}
 
       <!-- Website CMS -->
-      <li class="nav-item has-submenu">
-        <a href="#" class="toggle-submenu">
-          <span class="icon"><ion-icon name="globe-outline"></ion-icon></span>
-          <span class="title">Website CMS</span>
-          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
-        </a>
-        <ul class="submenu">
-          <li><a href="#">
-              <ion-icon name="document-text-outline"></ion-icon>
-              Manage Pages</a></li>
-          <li><a href="#">
-              <ion-icon name="megaphone-outline"></ion-icon>
-              Announcements</a></li>
-          <li><a href="#">
-              <ion-icon name="images-outline"></ion-icon>
-              Banners / Sliders</a></li>
-          <li><a href="#">
-              <ion-icon name="help-circle-outline"></ion-icon>
-              FAQs</a></li>
-        </ul>
-      </li>
+{{--      <li class="nav-item has-submenu">--}}
+{{--        <a href="#" class="toggle-submenu">--}}
+{{--          <span class="icon"><ion-icon name="globe-outline"></ion-icon></span>--}}
+{{--          <span class="title">Website CMS</span>--}}
+{{--          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>--}}
+{{--        </a>--}}
+{{--        <ul class="submenu">--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="document-text-outline"></ion-icon>--}}
+{{--              Manage Pages</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="megaphone-outline"></ion-icon>--}}
+{{--              Announcements</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="images-outline"></ion-icon>--}}
+{{--              Banners / Sliders</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="help-circle-outline"></ion-icon>--}}
+{{--              FAQs</a></li>--}}
+{{--        </ul>--}}
+{{--      </li>--}}
 
       <!-- Logs -->
-      <li class="nav-item has-submenu">
-        <a href="#" class="toggle-submenu">
-          <span class="icon"><ion-icon name="receipt-outline"></ion-icon></span>
-          <span class="title">Logs</span>
-          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>
-        </a>
-        <ul class="submenu">
-          <li><a href="#">
-              <ion-icon name="terminal-outline"></ion-icon>
-              System Logs</a></li>
-          <li><a href="#">
-              <ion-icon name="reader-outline"></ion-icon>
-              Activity Logs</a></li>
-          <li><a href="#">
-              <ion-icon name="bug-outline"></ion-icon>
-              Error Logs</a></li>
-          <li><a href="#">
-              <ion-icon name="key-outline"></ion-icon>
-              Login History</a></li>
-        </ul>
-      </li>
+{{--      <li class="nav-item has-submenu">--}}
+{{--        <a href="#" class="toggle-submenu">--}}
+{{--          <span class="icon"><ion-icon name="receipt-outline"></ion-icon></span>--}}
+{{--          <span class="title">Logs</span>--}}
+{{--          <ion-icon name="chevron-down-outline" class="dropdown-icon"></ion-icon>--}}
+{{--        </a>--}}
+{{--        <ul class="submenu">--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="terminal-outline"></ion-icon>--}}
+{{--              System Logs</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="reader-outline"></ion-icon>--}}
+{{--              Activity Logs</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="bug-outline"></ion-icon>--}}
+{{--              Error Logs</a></li>--}}
+{{--          <li><a href="#">--}}
+{{--              <ion-icon name="key-outline"></ion-icon>--}}
+{{--              Login History</a></li>--}}
+{{--        </ul>--}}
+{{--      </li>--}}
 
       {{-- Customer Menu --}}
     @elseif (Auth::user()->role === 'customer')
